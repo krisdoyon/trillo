@@ -191,7 +191,7 @@
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 
   &__heading {
     font-size: 2.25rem;
@@ -219,7 +219,7 @@
     align-items: center;
     font-size: 1.2rem;
     gap: 0.5rem;
-    margin-right:2.4rem;
+    margin-right: 2.4rem;
   }
 
   &__rating {
@@ -282,5 +282,75 @@
   100% {
     transform: scale(1);
     box-sizing: none;
+  }
+}
+
+//////////////////////////////////////////////////////////////
+// PARAGRAPH
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+}
+
+//////////////////////////////////////////////////////////////
+// LIST
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.8rem;
+  }
+
+  &__item:before {
+    content: "";
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 0.6rem;
+
+    background-color: var(--color-primary);
+    -webkit-mask-box-image: url(../img/icon-right.svg);
+    mask-size: cover;
+  }
+}
+
+//////////////////////////////////////////////////////////////
+// RECOMMEND
+
+.recommend {
+  color: var(--color-grey-dark-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+
+  &__count {
+  }
+
+  &__friends { 
+    display: flex;
+  }
+  &__photo {
+    box-sizing: content-box;
+    height: 4.4rem;
+    width: 4.4rem;
+    border-radius: 50%;
+    border: #fff 3px solid;
+
+    &:not(:last-child) {
+      margin-right: -1.2rem;
+    }
   }
 }

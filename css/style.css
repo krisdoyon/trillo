@@ -10,6 +10,8 @@
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+  --line: 1px solid var(--color-grey-light-2);
 }
 
 * {
@@ -189,7 +191,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 }
 .overview__heading {
   font-size: 2.25rem;
@@ -267,10 +269,59 @@ body {
     box-sizing: none;
   }
 }
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap;
+}
+.list__item {
+  flex: 0 0 50%;
+  margin-bottom: 0.8rem;
+}
+.list__item:before {
+  content: "";
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-right: 0.6rem;
+  background-color: var(--color-primary);
+  -webkit-mask-box-image: url(../img/icon-right.svg);
+  mask-size: cover;
+}
+
+.recommend {
+  color: var(--color-grey-dark-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.recommend__friends {
+  display: flex;
+}
+.recommend__photo {
+  box-sizing: content-box;
+  height: 4.4rem;
+  width: 4.4rem;
+  border-radius: 50%;
+  border: #fff 3px solid;
+}
+.recommend__photo:not(:last-child) {
+  margin-right: -1.2rem;
+}
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
-  background-color: var(--color-grey-light-1);
+  background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
@@ -279,7 +330,7 @@ body {
   font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   padding: 0 1.6rem;
   display: flex;
   justify-content: space-between;
@@ -300,7 +351,28 @@ body {
 
 .hotel-view {
   flex: 1;
-  height: 80rem;
+  background-color: #fff;
+}
+
+.detail {
+  display: flex;
+  font-size: 1.4rem;
+  gap: 4.4rem;
+  padding: 4.4rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+}
+
+.description {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%;
+}
+
+.user-reviews {
+  background-color: orange;
+  flex: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
