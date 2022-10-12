@@ -258,8 +258,16 @@
   cursor: pointer;
   transition: all 0.2s;
 
+  & span {
+    transition: margin-left 0.2s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
+
+    span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -290,9 +298,6 @@
 
 .paragraph:not(:last-of-type) {
   margin-bottom: 2rem;
-}
-
-.paragraph {
 }
 
 //////////////////////////////////////////////////////////////
@@ -336,10 +341,7 @@
   align-items: center;
   font-size: 1.3rem;
 
-  &__count {
-  }
-
-  &__friends { 
+  &__friends {
     display: flex;
   }
   &__photo {
@@ -352,5 +354,70 @@
     &:not(:last-child) {
       margin-right: -1.2rem;
     }
+  }
+}
+
+//////////////////////////////////////////////////////////////
+// USER REVIEWS
+
+.review {
+  background-color: #fff;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+
+  z-index: 10;
+
+  &__text {
+    z-index: 10;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.4rem;
+    border-radius: 1000rem;
+    margin-right: 1.4rem;
+  }
+
+  &__user-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+  }
+
+  &__user-name {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__rating {
+    color: var(--color-primary);
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    font-size: 20rem;
+    font-family: sans-serif;
+    color: var(--color-grey-light-3);
+    top: -2.4rem;
+    line-height: 1;
+    left: 0;
+    // z-index:1;
   }
 }
