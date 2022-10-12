@@ -377,6 +377,52 @@ body {
   left: 0;
 }
 
+.cta__book-now {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.btn--cta {
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  border: none;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-radius: 1000rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+}
+.btn--cta__visible {
+  display: inline-block;
+  padding: 1.8rem 7.2rem;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+}
+.btn--cta__invisible {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -100%;
+  padding: 1.8rem 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+}
+.btn--cta:hover {
+  background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+}
+.btn--cta:hover .btn--cta__visible {
+  transform: translateY(100%);
+}
+.btn--cta:hover .btn--cta__invisible {
+  top: 0;
+}
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -435,6 +481,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */
