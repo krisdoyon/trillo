@@ -1,9 +1,23 @@
+/* Breakpoints
+
+75em (1200px)
+62.5em (1000px)
+44em (704px)
+32em (512px)
+
+*/
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+
+  @media only screen and (max-width: 75em) {
+    margin: 0;
+    max-width: 100%;
+  }
 }
 
 .header {
@@ -16,10 +30,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 44em) {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: 32em) {
+    flex-wrap: wrap;
+    height: 11rem;
+    align-items: space-around;
+    padding: 0;
+  }
 }
 
 .content {
   display: flex;
+
+  @media only screen and (max-width: 62.5em) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -42,6 +71,11 @@
   padding: 4.4rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
+
+  @media only screen and (max-width: 44em) {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
 }
 
 .description {
@@ -57,6 +91,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 44em) {
+    gap: 3.2rem;
+  }
 }
 
 .cta {
@@ -65,4 +103,8 @@
   align-items: center;
   gap: 2rem;
   padding: 3.6rem;
+
+  @media only screen and (max-width: 44em) {
+    text-align: center;
+  }
 }
