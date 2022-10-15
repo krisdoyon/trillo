@@ -4,11 +4,11 @@
   "description": "trillo app",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass sass/main.scss css/style.css -w",
+    "watch:sass": "sass sass/main.scss css/styles.css -w",
     
-    "compile:sass": "sass sass/main.scss css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
-    "compress:css": "sass css/style.prefix.css css/style.css --output-style compressed",
+    "compile:sass": "sass sass/main.scss css/styles.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/styles.comp.css -o css/styles.prefix.css",
+    "compress:css": "sass css/styles.prefix.css css/styles.css --style=compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
   "author": "Kris Doyon",
